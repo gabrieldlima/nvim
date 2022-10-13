@@ -6,8 +6,11 @@ return require('packer').startup(function(use)
     use { 'projekt0n/github-nvim-theme' }
 
     -- Statusline
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
+    use { 'nvim-lualine/lualine.nvim' }
+
+    -- File explorer
+    use { 'nvim-tree/nvim-tree.lua' }
+
+    -- Icons
+    use { 'kyazdani42/nvim-web-devicons' }
 end)
