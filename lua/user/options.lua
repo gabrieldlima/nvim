@@ -1,1 +1,1 @@
-vim.g.mapleader = " "
+vim.opt.expandtab = true
