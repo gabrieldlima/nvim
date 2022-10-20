@@ -5,3 +5,5 @@ local vnoremap = require("user.utils").vnoremap
 local xnoremap = require("user.utils").xnoremap
 
 vim.g.mapleader = ' '
+
+inoremap("jk", "<Esc>")
