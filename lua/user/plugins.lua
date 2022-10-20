@@ -1,4 +1,9 @@
-return require('packer').startup(function(use)
+local status_ok, packer = pcall(require, 'packer')
+if not status_ok then
+    return
+end
+
+return packer.startup(function(use)
     -- Packer can manage itself
     use { 'wbthomason/packer.nvim' }
 
