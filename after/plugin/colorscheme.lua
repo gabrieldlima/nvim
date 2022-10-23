@@ -3,11 +3,10 @@ if not status_ok then
     return
 end
 
-github_nvim_theme.setup({
+github_nvim_theme.setup {
     theme_style = "dark_default",
-    dark_sidebar = true,
     comment_style = "italic",
     keyword_style = "italic",
     function_style = "NONE",
     variable_style = "NONE"
-})
+}
