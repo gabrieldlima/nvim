@@ -15,5 +15,7 @@ vim.opt.cursorline = true
 vim.opt.backup = false
 vim.opt.swapfile = false
 
+vim.opt.showmode = false
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
