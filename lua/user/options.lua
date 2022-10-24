@@ -10,6 +10,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
 vim.opt.wrap = false
+vim.opt.cursorline = true
 
 vim.opt.backup = false
 vim.opt.swapfile = false
