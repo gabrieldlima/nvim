@@ -1,25 +1,23 @@
-vim.opt.fileencoding = "utf-8"
-vim.opt.termguicolors = true
+local o = vim.opt
+local g = vim.g
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+o.backup = false
+o.cursorline = true
+o.expandtab = true
+o.fileencoding = "utf-8"
+o.hlsearch = false
+o.incsearch = true
+o.number = true
+o.relativenumber = true
+o.scrolloff = 8
+o.shiftwidth = 4
+o.showmode = false
+o.showcmd = false
+o.softtabstop = 4
+o.swapfile = false
+o.termguicolors = true
+o.tabstop = 4
+o.wrap = false
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.scrolloff = 8
-vim.opt.wrap = false
-vim.opt.cursorline = true
-
-vim.opt.backup = false
-vim.opt.swapfile = false
-
-vim.opt.showmode = false
-vim.opt.showcmd = false
-
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
