@@ -18,4 +18,7 @@ return packer.startup(function(use)
 
     -- Icons
     use { "kyazdani42/nvim-web-devicons" }
+
+    -- Autopairs
+    use { "windwp/nvim-autopairs" }
 end)
