@@ -23,5 +23,5 @@ return packer.startup(function(use)
     use { "windwp/nvim-autopairs" }
 
     -- Indent guides
-    -- use { "lukas-reineke/indent-blankline.nvim" }
+    use { "lukas-reineke/indent-blankline.nvim" }
 end)
