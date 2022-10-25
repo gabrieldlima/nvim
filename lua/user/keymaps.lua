@@ -6,4 +6,11 @@ local xnoremap = require("user.utils").xnoremap
 
 vim.g.mapleader = ' '
 
+-- Normal mode
+nnoremap("<C-h>", "<C-w>h")
+nnoremap("<C-j>", "<C-w>j")
+nnoremap("<C-k>", "<C-w>k")
+nnoremap("<C-l>", "<C-w>l")
+
+-- Insert mode
 inoremap("jk", "<Esc>")
