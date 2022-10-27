@@ -9,6 +9,7 @@ return packer.startup(function(use)
 
     -- LSP
     use { "neovim/nvim-lspconfig" }
+    use { "williamboman/mason.nvim" }
 
     -- Colorscheme
     use { "projekt0n/github-nvim-theme" }
