@@ -13,6 +13,7 @@ o.scrolloff = 8
 o.shiftwidth = 4
 o.showmode = false
 o.showcmd = false
+o.signcolumn = "yes"
 o.softtabstop = 4
 o.swapfile = false
 o.termguicolors = true
