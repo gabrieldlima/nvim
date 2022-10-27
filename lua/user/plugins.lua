@@ -11,6 +11,15 @@ return packer.startup(function(use)
     use { "neovim/nvim-lspconfig" }
     use { "williamboman/mason.nvim" }
 
+    -- CMP
+    use { "hrsh7th/nvim-cmp" }
+    use { "hrsh7th/cmp-buffer" }
+    use { "hrsh7th/cmp-nvim-lsp" }
+    use { "saadparwaiz1/cmp_luasnip" }
+
+    -- Snippet
+    use { "L3MON4D3/LuaSnip" }
+
     -- Colorscheme
     use { "projekt0n/github-nvim-theme" }
 
