@@ -7,6 +7,7 @@ o.expandtab = true
 o.fileencoding = "utf-8"
 o.hlsearch = false
 o.incsearch = true
+o.laststatus = 3
 o.number = true
 o.relativenumber = true
 o.scrolloff = 8
@@ -18,6 +19,7 @@ o.softtabstop = 4
 o.swapfile = false
 o.termguicolors = true
 o.tabstop = 4
+o.winbar = "%=%m %f"
 o.wrap = false
 
 g.loaded_netrw = 1
