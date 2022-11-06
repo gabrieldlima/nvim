@@ -5,7 +5,7 @@ end
 
 mason.setup({
     ui = {
-        check_outdated_packages_on_open = true,
+        check_outdated_packages_on_open = false,
         border = "single",
         icons = {
             package_installed = "✓",
