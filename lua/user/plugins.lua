@@ -13,6 +13,7 @@ return packer.startup(function(use)
 
     -- Treesitter
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+    use { "p00f/nvim-ts-rainbow" }
 
     -- CMP
     use { "hrsh7th/nvim-cmp" }

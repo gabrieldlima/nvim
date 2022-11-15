@@ -34,6 +34,20 @@ treesitter.setup {
         additional_vim_regex_highlighting = false
     },
 
+    rainbow = {
+        -- Rainbow parentheses for neovim using tree-sitter
+        enable = true,
+
+        -- List of languages you want to disable the plugin for
+        disable = { "" },
+
+        -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+        extended_mode = true,
+
+        -- Do not enable for files with more than n lines, int
+        max_file_lines = nil
+    },
+
     -- Indentation based on treesitter
     indent = { enable = true },
 
