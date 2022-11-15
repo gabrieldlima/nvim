@@ -24,6 +24,10 @@ return packer.startup(function(use)
     -- Snippet
     use { "L3MON4D3/LuaSnip" }
 
+    -- Telescope
+    use { "nvim-telescope/telescope.nvim" }
+    use { "nvim-lua/plenary.nvim" }
+
     -- Colorscheme
     use { "projekt0n/github-nvim-theme" }
 
