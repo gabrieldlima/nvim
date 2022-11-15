@@ -11,6 +11,9 @@ return packer.startup(function(use)
     use { "neovim/nvim-lspconfig" }
     use { "williamboman/mason.nvim" }
 
+    -- Treesitter
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+
     -- CMP
     use { "hrsh7th/nvim-cmp" }
     use { "hrsh7th/cmp-buffer" }
