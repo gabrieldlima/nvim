@@ -29,7 +29,7 @@ return packer.startup(function(use)
     use { "nvim-lua/plenary.nvim" }
 
     -- Colorscheme
-    use { "projekt0n/github-nvim-theme" }
+    use { "catppuccin/nvim" }
 
     -- Statusline
     use { "nvim-lualine/lualine.nvim" }
