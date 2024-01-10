@@ -12,7 +12,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  -- [[ Colorscheme ]]
   "catppuccin/nvim",
   name = "catppuccin",
   priority = 1000,
+
+
+  -- [[ LSP Plugins ]]
+  {
+    -- Quickstart configs for Nvim LSP
+    "neovim/nvim-lspconfig",
+  }
 })
