@@ -2,7 +2,7 @@
 -- NOTE: Must happen before plugins are required
 vim.g.mapleader = " "
 
--- [[ Setting optins ]]
+-- [[ Setting options ]]
 require("options")
 
 -- [[ Install lazy.nvim plugin manager ]]
@@ -10,3 +10,6 @@ require("lazyvim")
 
 -- [[ Configure plugins ]]
 require("colorscheme")
+
+-- [[ Configure LSP ]]
+require("lsp")
