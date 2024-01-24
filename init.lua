@@ -12,4 +12,7 @@ require("lazyvim")
 require("colorscheme")
 
 -- [[ Configure LSP ]]
-require("lsp")
+-- require("lsp")
+
+-- [[ Configure Telescope ]]
+require("nvim-telescope")
