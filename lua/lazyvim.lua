@@ -42,4 +42,11 @@ require("lazy").setup({
       },
     },
   },
+
+  -- Useful plugin to show you peding keybinds
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
 })
