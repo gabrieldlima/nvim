@@ -14,6 +14,7 @@ require("telescope").setup {
 -- Enable telescope fzf native, if installed
 pcall(require("telescope").load_extension, "fzf")
 
+vim.keymap.set('n', "<leader>?", builtin.old_files, { desc = "[?] Find recently opened files" })
 vim.keymap.set('n', "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
 vim.keymap.set('n', "<leader>gf", builtin.git_files, { desc = "Search [G]it [F]iles" })
 vim.keymap.set('n', "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
