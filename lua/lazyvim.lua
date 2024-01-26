@@ -49,4 +49,10 @@ require("lazy").setup({
     event = "VeryLazy",
     opts = {},
   },
+
+  -- [[ Treesitter ]]
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+  },
 })
