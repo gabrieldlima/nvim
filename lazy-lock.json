@@ -1,9 +1,9 @@
 {
-  "catppuccin": { "branch": "main", "commit": "afab7ec2a79c7127627dede79c0018b6e45663d0" },
+  "catppuccin": { "branch": "main", "commit": "c2e6f8e7eb8d0ebf55700c89bdf842809aeecf09" },
   "lazy.nvim": { "branch": "main", "commit": "aedcd79811d491b60d0a6577a9c1701063c2a609" },
-  "nvim-lspconfig": { "branch": "master", "commit": "8917d2c830e04bf944a699b8c41f097621283828" },
-  "nvim-treesitter": { "branch": "master", "commit": "4bc1f9a4eb5e7a0a963636a8b2aa419c17234c62" },
-  "plenary.nvim": { "branch": "master", "commit": "663246936325062427597964d81d30eaa42ab1e4" },
+  "nvim-lspconfig": { "branch": "master", "commit": "021906284dcfb938bc236f8295af2650c60cb807" },
+  "nvim-treesitter": { "branch": "master", "commit": "e24dab6696aa2a6682a117e241adc32c38e93d53" },
+  "plenary.nvim": { "branch": "master", "commit": "4f71c0c4a196ceb656c824a70792f3df3ce6bb6d" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "6c921ca12321edaa773e324ef64ea301a1d0da62" },
   "telescope.nvim": { "branch": "0.1.x", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
