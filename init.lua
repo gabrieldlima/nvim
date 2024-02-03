@@ -11,8 +11,11 @@ require("lazyvim")
 -- [[ Configure plugins ]]
 require("colorscheme")
 
--- [[ Configure LSP ]]
--- require("lsp")
-
 -- [[ Configure Telescope ]]
 require("nvim-telescope")
+
+-- [[ Configure Treesitter ]]
+require("treesitter")
+
+-- [[ Configure LSP ]]
+-- require("lsp")
