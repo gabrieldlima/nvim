@@ -1,6 +1,7 @@
 -- Set <space> as the leader key
 -- NOTE: Must happen before plugins are required
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- [[ Setting options ]]
 require("options")
