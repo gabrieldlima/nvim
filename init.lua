@@ -19,4 +19,4 @@ require("nvim-telescope")
 require("treesitter")
 
 -- [[ Configure LSP ]]
--- require("lsp")
+require("lsp")
