@@ -23,6 +23,11 @@ require("lazy").setup({
   {
     -- Quickstart configs for Nvim LSP
     "neovim/nvim-lspconfig",
+    dependencies = {
+      -- Automatically install LSPs to stdpath for neovim
+      { "williamboman/mason.nvim", config = true },
+      "williamboman/mason-lspconfig.nvim",
+    },
   },
 
   -- [[ Fuzzy Finder (files, lsp, etc) ]]
@@ -43,7 +48,7 @@ require("lazy").setup({
     },
   },
 
-  -- Useful plugin to show you peding keybinds
+  -- [[ Useful plugin to show you peding keybinds ]]
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
