@@ -44,6 +44,9 @@ o.undofile = false
 -- Sync clipboard between OS and Neovim
 o.clipboard = "unnamedplus"
 
+-- Set completeopt to have a better completion experience
+o.completeopt = "menuone,noselect"
+
 -- Disable mouse support
 o.mouse = ""
 
