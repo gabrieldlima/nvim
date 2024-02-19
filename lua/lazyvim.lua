@@ -1,3 +1,6 @@
+--
+-- [[ LazyVim plugin manager ]]
+--
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -11,15 +14,24 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+--
+-- [[ Configure Plugins ]]
+--
+-- NOTE: Here is where you install your plugins.
+-- You can configure plugins using the `config` key.
+--
+-- You can also configure plugins after the setup call,
+-- as they will be avaliable in your neovim runtime.
 require("lazy").setup({
-  -- [[ Colorscheme ]]
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-  },
+  -- TODO:
+  -- 'lewis6991/gitsigns.nvim',
+  -- 'nvim-lualine/lualine.nvim',
+  -- 'lukas-reineke/indent-blankline.nvim',
+  -- 'numToStr/Comment.nvim',
 
-  -- [[ LSP Plugins ]]
+  --
+  -- [[ LSP ]]
+  --
   {
     -- Quickstart configs for Nvim LSP
     "neovim/nvim-lspconfig",
@@ -33,7 +45,47 @@ require("lazy").setup({
     },
   },
 
-  -- [[ Fuzzy Finder (files, lsp, etc) ]]
+  --
+  -- [[ Autocompletion ]]
+  --
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      -- Snippet Engine & its associated nvim-cmp source
+      {
+        'L3MON4D3/LuaSnip',
+        build = (function()
+          -- Build Step is needed for regex support in snippets
+          -- This step is not supported in many windows environments
+          -- Remove the below condition to re-enable on windows
+          if vim.fn.has 'win32' == 1 then
+            return
+          end
+          return 'make install_jsregexp'
+        end)(),
+      },
+      'saadparwaiz1/cmp_luasnip',
+
+      -- Adds LSP completion capabilities
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
+
+      -- Adds a number of user-friendly snippets
+      'rafamadriz/friendly-snippets',
+    },
+  },
+
+  --
+  -- [[ Treesitter ]]
+  --
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+  },
+
+  --
+  -- [[ Fuzzy Finder ]]
+  --
   {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
@@ -51,16 +103,21 @@ require("lazy").setup({
     },
   },
 
+  --
   -- [[ Useful plugin to show you peding keybinds ]]
+  --
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = {},
   },
 
-  -- [[ Treesitter ]]
+  --
+  -- [[ Colorscheme ]]
+  --
   {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
   },
 })
