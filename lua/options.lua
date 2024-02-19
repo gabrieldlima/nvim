@@ -12,6 +12,9 @@ o.relativenumber = true
 -- Keep signcolumn on by default
 o.signcolumn = "yes"
 
+-- Enable break indent
+o.breakindent = true
+
 -- Tabs
 o.expandtab = true
 o.tabstop = 2
