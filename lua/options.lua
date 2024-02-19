@@ -9,6 +9,9 @@ o.number = true
 -- Show the line number relative to the line with the cursor
 o.relativenumber = true
 
+-- Keep signcolumn on by default
+o.signcolumn = "yes"
+
 -- Tabs
 o.expandtab = true
 o.tabstop = 2
