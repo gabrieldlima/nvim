@@ -25,7 +25,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- TODO:
   -- 'lewis6991/gitsigns.nvim',
-  -- 'numToStr/Comment.nvim',
 
   --
   -- [[ LSP ]]
@@ -127,6 +126,15 @@ require("lazy").setup({
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     opts = {}
+  },
+
+  --
+  -- [[ Smart comments ]]
+  --
+  {
+    "numToStr/Comment.nvim",
+    opts = {},
+    lazy = false,
   },
 
   --
