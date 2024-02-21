@@ -138,6 +138,15 @@ require("lazy").setup({
   },
 
   --
+  -- [[ Autopairs ]]
+  --
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    opts = {},
+  },
+
+  --
   -- [[ Colorscheme ]]
   --
   {
