@@ -26,3 +26,6 @@ require("lsp")
 
 -- [[ Configure nvim-cmp ]]
 require("nvim-cmp")
+
+-- [[ Configure lualine ]]
+require("statusline")
