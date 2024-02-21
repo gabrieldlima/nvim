@@ -25,8 +25,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- TODO:
   -- 'lewis6991/gitsigns.nvim',
-  -- 'nvim-lualine/lualine.nvim',
-  -- 'lukas-reineke/indent-blankline.nvim',
   -- 'numToStr/Comment.nvim',
 
   --
@@ -120,6 +118,15 @@ require("lazy").setup({
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
+  },
+
+  --
+  -- [[ Indentation guides ]]
+  --
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {}
   },
 
   --
