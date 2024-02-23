@@ -39,6 +39,9 @@ require("lazy").setup({
 
       -- Additional lua configuration, makes neovim stuff amazing!
       "folke/neodev.nvim",
+
+      -- Useful status updates for LSP
+      { "j-hui/fidget.nvim", opts = {} },
     },
   },
 
