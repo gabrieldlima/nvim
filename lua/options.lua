@@ -34,6 +34,9 @@ o.wrap = false
 -- Show (partial) command in the last line of the screen
 o.showcmd = false
 
+-- Don't show the mode, since it's already in the status line
+o.showmode = false
+
 -- Highlight the text line of the cursor
 o.cursorline = true
 
