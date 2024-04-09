@@ -51,7 +51,7 @@ o.clipboard = "unnamedplus"
 o.completeopt = "menuone,noselect"
 
 -- Disable mouse support
-o.mouse = ""
+o.mouse = "a"
 
 -- Enable 24-bit RGB color
 o.termguicolors = true
