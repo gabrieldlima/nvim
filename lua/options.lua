@@ -19,6 +19,10 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 
+-- Configure how new splits should be opened
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
 -- When there is a previous search pattern, highlight all its matches
 vim.opt.hlsearch = false
 
