@@ -19,6 +19,9 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 
+-- Minimal numbers of screen lines to keep above and below the cursor
+vim.opt.scrolloff = 10
+
 -- Configure how new splits should be opened
 vim.opt.splitright = true
 vim.opt.splitbelow = true
