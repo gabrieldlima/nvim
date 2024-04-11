@@ -1,60 +1,58 @@
-local o = vim.o
-
 -- UTF-8
-o.fileencoding = "utf-8"
+vim.opt.fileencoding = "utf-8"
 
 -- Make line numbers default
-o.number = true
+vim.opt.number = true
 
 -- Show the line number relative to the line with the cursor
-o.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Keep signcolumn on by default
-o.signcolumn = "yes"
+vim.opt.signcolumn = "yes"
 
 -- Enable break indent
-o.breakindent = true
+vim.opt.breakindent = true
 
 -- Tabs
-o.expandtab = true
-o.tabstop = 2
-o.softtabstop = 2
-o.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 
 -- When there is a previous search pattern, highlight all its matches
-o.hlsearch = false
+vim.opt.hlsearch = false
 
 -- Case-insensitive searching
-o.ignorecase = true
-o.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- No wrap long lines
-o.wrap = false
+vim.opt.wrap = false
 
 -- Show (partial) command in the last line of the screen
-o.showcmd = false
+vim.opt.showcmd = false
 
 -- Don't show the mode, since it's already in the status line
-o.showmode = false
+vim.opt.showmode = false
 
 -- Highlight the text line of the cursor
-o.cursorline = true
+vim.opt.cursorline = true
 
 -- Decrease update time
-o.updatetime = 250
-o.timeoutlen = 300
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
 
 -- Save undo history
-o.undofile = false
+vim.opt.undofile = false
 
 -- Sync clipboard between OS and Neovim
-o.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamedplus"
 
 -- Set completeopt to have a better completion experience
-o.completeopt = "menuone,noselect"
+vim.opt.completeopt = "menuone,noselect"
 
 -- Disable mouse support
-o.mouse = "a"
+vim.opt.mouse = "a"
 
 -- Enable 24-bit RGB color
-o.termguicolors = true
+vim.opt.termguicolors = true
