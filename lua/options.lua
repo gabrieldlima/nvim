@@ -33,8 +33,8 @@ vim.opt.inccommand = 'split'
 vim.opt.list = true
 vim.opt.listchars = { eol = "󰌑", tab = "» ", nbsp = "_" }
 
--- When there is a previous search pattern, highlight all its matches
-vim.opt.hlsearch = false
+-- Set highlight on search
+vim.opt.hlsearch = true
 
 -- Case-insensitive searching
 vim.opt.ignorecase = true
