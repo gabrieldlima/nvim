@@ -2,7 +2,7 @@
 vim.defer_fn(function()
   require("nvim-treesitter.configs").setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "nix", "css", "scss", "yuck" },
+    ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "nix", "css", "scss", "yuck", "javascript" },
 
     -- Install parsers synchronously (only applied to 'ensure_installed')
     sync_install = false,
