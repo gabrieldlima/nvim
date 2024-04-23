@@ -26,6 +26,9 @@ vim.opt.scrolloff = 10
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+-- Preview substitutions live, as you type!
+vim.opt.inccommand = 'split'
+
 -- Sets how neovim will display certain whitespace caracters in the editor
 vim.opt.list = true
 vim.opt.listchars = { eol = "󰌑", tab = "» ", nbsp = "_" }
