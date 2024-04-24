@@ -1,5 +1,6 @@
 -- Map Esc to `jk`
 vim.keymap.set({ "i" }, "jk", "<Esc>", { silent = true })
+vim.keymap.set({ "i" }, "kj", "<Esc>", { silent = true })
 
 -- TIP: Disable arrow keys in normal mode
 vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
