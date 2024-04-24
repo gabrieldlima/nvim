@@ -36,7 +36,11 @@ require("catppuccin").setup({
       crust = "#010101",
     },
   },
-  custom_highlights = {},
+  custom_highlights = function (colors)
+    return {
+      WinSeparator = { bg = colors.base, fg = colors.blue },
+    }
+  end,
   integrations = {
     cmp = true,
     gitsigns = true,
