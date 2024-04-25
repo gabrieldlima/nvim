@@ -23,9 +23,6 @@ vim.opt.rtp:prepend(lazypath)
 -- You can also configure plugins after the setup call,
 -- as they will be avaliable in your neovim runtime.
 require("lazy").setup({
-  -- TODO:
-  -- 'lewis6991/gitsigns.nvim',
-
   --
   -- [[ LSP ]]
   --
