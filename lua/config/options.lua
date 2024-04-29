@@ -57,7 +57,7 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 
 -- Save undo history
-vim.opt.undofile = true
+vim.opt.undofile = false
 
 -- Sync clipboard between OS and Neovim
 vim.opt.clipboard = "unnamedplus"
