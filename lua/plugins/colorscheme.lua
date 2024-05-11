@@ -39,6 +39,7 @@ require("catppuccin").setup({
   custom_highlights = function (colors)
     return {
       WinSeparator = { bg = colors.base, fg = colors.blue },
+      NeoTreeWinSeparator = { bg = colors.base, fg = colors.blue },
     }
   end,
   integrations = {
