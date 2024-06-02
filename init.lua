@@ -7,10 +7,7 @@
 -- ║╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝║
 -- ╚══════════════════════════════════════════════════╝
 
--- Set <,> as the leader key
--- NOTE: Must happen before plugins are required
-vim.g.mapleader = ","
-vim.g.maplocalleader = ","
+require("custom.config")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
