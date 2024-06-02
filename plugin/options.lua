@@ -54,6 +54,7 @@ vim.opt.cursorline = true
 
 -- Decrease update time
 vim.opt.updatetime = 250
+-- Decrease mapped sequence wait time
 vim.opt.timeoutlen = 300
 
 -- Save undo history
