@@ -53,15 +53,12 @@ return {
         default_integrations = true,
         integrations = {
           cmp = true,
+          fidget = true,
           gitsigns = true,
-          nvimtree = true,
+          indent_blankline = { enabled = true,scope_color = "lavender" },
+          mason = true,
           treesitter = true,
-          notify = false,
-          mini = {
-            enabled = true,
-            indentscope_color = "",
-          },
-          -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+          which_key = true,
         },
       })
 
