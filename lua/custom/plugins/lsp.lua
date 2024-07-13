@@ -93,6 +93,8 @@ return {
             -- diagnostics = { disable = { 'missing-fields' } },
           },
         },
+        tsserver = {},
+        cssls = {},
       }
 
       -- Setup neovim lua configuration
