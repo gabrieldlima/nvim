@@ -32,4 +32,5 @@ require("lazy").setup({
   install = { colorscheme = { "default" } },
   -- automatically check for plugin updates.
   checker = { enabled = true },
+  change_detection = { notify = false }
 })
