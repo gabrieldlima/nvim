@@ -18,7 +18,10 @@ return {
           return {
             WinSeparator = { bg = colors.base, fg = colors.blue },
           }
-        end
+        end,
+        integrations = {
+          cmp = true,
+        },
       }
       vim.cmd.colorscheme("catppuccin")
     end
