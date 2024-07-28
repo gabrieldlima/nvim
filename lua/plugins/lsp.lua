@@ -7,18 +7,16 @@ return {
         dependencies = {
           "williamboman/mason-lspconfig.nvim",
         },
-        config = function ()
-          require("mason").setup {
-            ui = {
-              border = "rounded",
-              icons = {
-                package_installed = "✓",
-                package_peding = "➜",
-                package_uninstalled = "✗",
-              },
+        opts = {
+          ui = {
+            border = "rounded",
+            icons = {
+              package_installed = " ",
+              package_peding = " ",
+              package_uninstalled = " ",
             },
-          }
-        end
+          },
+        },
       },
 
       {
