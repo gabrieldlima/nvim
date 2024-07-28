@@ -21,6 +21,7 @@ return {
         end,
         integrations = {
           cmp = true,
+          fidget = true,
         },
       }
       vim.cmd.colorscheme("catppuccin")
