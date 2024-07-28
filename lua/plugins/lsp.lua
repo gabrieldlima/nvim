@@ -23,7 +23,7 @@ return {
     },
 
     config = function ()
-      lspconfig = require("lspconfig")
+      local lspconfig = require("lspconfig")
 
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function (event)
