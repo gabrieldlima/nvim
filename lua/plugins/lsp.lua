@@ -23,8 +23,14 @@ return {
     },
 
     config = function ()
-      local lspconfig = require("lspconfig")
-
+      -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+      --
+      --  This function gets run when an LSP attaches to a particular buffer.
+      --  That is to say, every time a new file is opened that is associated with
+      --  an lsp (for example, opening `main.rs` is associated with `rust_analyzer`)
+      --  this function will be executed to configure the current buffer
+      --
+      -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function (event)
           local keymap = function (keys, func, desc)
@@ -55,7 +61,7 @@ return {
 
             vim.api.nvim_create_autocmd("LspDetach", {
               group = vim.api.nvim_create_augroup("lsp-detach", { clear = true }),
-              callback = function(event2)
+              callback = function (event2)
                 vim.lsp.buf.clear_references()
                 vim.api.nvim_clear_autocmds { group = "lsp-highlight", buffer = event2.buf }
               end,
@@ -64,22 +70,72 @@ return {
         end
       })
 
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-      local language_servers = {
-        lua_ls = {},
+      -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+      --
+      -- LSP servers and clients are able to communicate to each other what features
+      -- they support. By default, Neovim doesn't support everything that is in the
+      -- LSP specification. When you add nvim-cmp, luasnip, etc. Neovim now has *more*
+      -- capabilities. So, we create new capabilities with nvim cmp, and then broadcast
+      -- that to the servers.
+      --
+      -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+      local lsp_capabilities = nil
+      if pcall(require, "cmp_nvim_lsp") then
+        lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
+      end
+      local capabilities = vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), lsp_capabilities)
+
+
+      -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+      --
+      -- Enable the following language servers. They will automatically be installed.
+      -- Add any additional override configuration in the following tables:
+      --
+      --   1. cmd: Override the default command used to start the server.
+      --   2. filetypes: Override the default list of associated filetypes.
+      --   3. capabilities: Override fields in capabilities.
+      --   4. settings: Override the default settings passed when initializing.
+      --
+      -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+      local lspconfig = require("lspconfig")
+      local mlsp = require("mason-lspconfig")
+
+      mlsp.setup {
+        ensure_installed = {
+          "lua_ls",
+        },
+        handlers = {
+          -- default handler
+          function (server_name)
+            lspconfig[server_name].setup {
+              capabilities = capabilities,
+            }
+          end,
+
+          -- custom handlers
+          ["lua_ls"] = function ()
+            lspconfig.lua_ls.setup {
+              settings = {
+                Lua = {
+                  diagnostics = {
+                    globals = {
+                      "vim",
+                    },
+                  },
+                },
+              },
+            }
+          end,
+        }
       }
 
-      require("mason-lspconfig").setup {
-        ensure_installed = vim.tbl_keys(language_servers),
-        handlers = {
-          function (server_name)
-            local server = language_servers[server_name] or {}
-            server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-            lspconfig[server_name].setup(server)
-          end
-        }
+      -- manually installed
+      lspconfig.nixd.setup {
+        cmd = { "/home/gabriel/.nix-profile/bin/nixd" },
+        filetypes = { "nix" },
+        capabilities = capabilities,
+        settings = {},
       }
     end
   }
