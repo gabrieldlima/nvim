@@ -5,6 +5,7 @@ local opt = vim.opt
 -- Set the leader key
 g.mapleader = ","
 g.maplocalleader = ","
+g.have_nerd_font = true
 
 
 opt.breakindent    = true -- Every wrapped line will continue visually indented
