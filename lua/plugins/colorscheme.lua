@@ -26,6 +26,7 @@ return {
             enabled = true,
             scope_color = "lavender",
           },
+          telescope = true,
           treesitter = true,
         },
       }
