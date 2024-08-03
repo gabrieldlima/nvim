@@ -22,6 +22,11 @@ return {
         integrations = {
           cmp = true,
           fidget = true,
+          indent_blankline = {
+            enabled = true,
+            scope_color = "lavender",
+          },
+          treesitter = true,
         },
       }
       vim.cmd.colorscheme("catppuccin")
