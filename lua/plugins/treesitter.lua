@@ -14,6 +14,7 @@ return {
           "markdown",
           "nix",
           "python",
+          "rust",
         },
 
         sync_install = false,
