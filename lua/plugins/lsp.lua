@@ -126,7 +126,6 @@ return {
 
       mlsp.setup {
         ensure_installed = {
-          "clangd",
           "lua_ls",
           "rust_analyzer",
         },
@@ -155,10 +154,17 @@ return {
         }
       }
 
-      -- manually installed
+      -- manually installed servers (from nixpkgs)
       lspconfig.nixd.setup {
         cmd = { "/home/gabriel/.nix-profile/bin/nixd" },
         filetypes = { "nix" },
+        capabilities = capabilities,
+        settings = {},
+      }
+
+      lspconfig.clangd.setup {
+        cmd = { "/home/gabriel/.nix-profile/bin/clangd", "--background-index" },
+        filetypes = { "c", "h" },
         capabilities = capabilities,
         settings = {},
       }
