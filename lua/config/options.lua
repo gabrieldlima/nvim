@@ -17,7 +17,7 @@ opt.fileencoding   = "utf-8" -- File-content encoding for the current buffer
 opt.ignorecase     = true -- Ignore case in search patterns
 opt.inccommand     = "split" -- Preview incremental substitute
 opt.list           = true -- Show some invisible characters (tabs, eol, ...)
-opt.listchars      = { eol = "󰌑", tab = "» ", nbsp = "_" } -- Strings to use in "list" mode
+opt.listchars      = { eol = "󱞦", tab = "» ", nbsp = "_" } -- Strings to use in "list" mode
 opt.mouse          = "a" -- Enables mouse support in all modes
 opt.number         = true -- Print the line number
 opt.relativenumber = true -- Relative line numbers
