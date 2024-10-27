@@ -23,7 +23,7 @@ opt.listchars      = { eol = "󱞦", tab = "» ", nbsp = "_" } -- Strings to use
 opt.mouse          = "a" -- Enables mouse support in all modes
 opt.number         = true -- Print the line number
 opt.relativenumber = true -- Relative line numbers
-opt.scrolloff      = 8 -- Minimal number of screen lines to keep above and below the cursor
+opt.scrolloff      = 10 -- Minimal number of screen lines to keep above and below the cursor
 opt.shiftwidth     = 2 -- Size of an indent
 opt.showcmd        = false -- Don't show commands
 opt.showmode       = false -- Don't show mode since we have a statusline
