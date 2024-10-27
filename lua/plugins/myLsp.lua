@@ -57,6 +57,7 @@ return {
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function (event)
           vim.diagnostic.config({ virtual_text = false })
+          vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
           -- LSP keymaps
           local keymap = function (keys, func, desc)
@@ -164,20 +165,35 @@ return {
         }
       }
 
-      -- manually installed servers
+      -- Manually installed servers
+      local nixpath = "/home/gabriel/.nix-profile/bin/"
+
+      -- NOTE: https://github.com/nix-community/nixd
+      --
       lspconfig.nixd.setup {
-        cmd = { "/home/gabriel/.nix-profile/bin/nixd" },
+        cmd = { nixpath .. "nixd" },
         filetypes = { "nix" },
         capabilities = capabilities,
         settings = {},
       }
 
-      lspconfig.clangd.setup {
-        cmd = { "/home/gabriel/.nix-profile/bin/clangd", "--background-index" },
+      -- NOTE: https://github.com/MaskRay/ccls
+      --
+      lspconfig.ccls.setup {
+        cmd = { nixpath .. "ccls" },
         filetypes = { "c", "h" },
         capabilities = capabilities,
         settings = {},
       }
+
+      -- NOTE: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#clangd
+      --
+      -- lspconfig.clangd.setup {
+      --   cmd = { nixpath .. "clangd" , "--background-index" },
+      --   filetypes = { "c", "h" },
+      --   capabilities = capabilities,
+      --   settings = {},
+      -- }
     end
   }
 }
