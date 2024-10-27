@@ -9,7 +9,9 @@ g.have_nerd_font = true
 
 
 opt.breakindent    = true -- Every wrapped line will continue visually indented
-opt.clipboard      = "unnamedplus" -- Sync with system clipboard
+vim.schedule(function()
+  opt.clipboard    = "unnamedplus" -- Sync with system clipboard
+end)
 opt.completeopt    = "menu,menuone,noselect" -- A comma-separated list of options for Insert mode completion
 opt.cursorline     = true -- Enable highlighting of the current line
 opt.expandtab      = true -- Use spaces instead of tabs
