@@ -28,6 +28,9 @@ require("lazy").setup({
     -- import your plugins
     { import = "plugins" },
   },
+  ui = {
+    border = "rounded"
+  },
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "default" } },
   -- automatically check for plugin updates.
