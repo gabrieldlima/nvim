@@ -56,6 +56,9 @@ return {
       -- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function (event)
+          vim.diagnostic.config({ virtual_text = false })
+
+          -- LSP keymaps
           local keymap = function (keys, func, desc)
             vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
           end
@@ -64,8 +67,16 @@ return {
           keymap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
           keymap("<leader>gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
-          vim.diagnostic.config({ virtual_text = false })
+          local builtin = require("telescope.builtin")
+          keymap("gd", builtin.lsp_definitions, "[G]oto [D]efinition")
+          keymap("gr", builtin.lsp_references, "[G]oto [R]eferences")
+          keymap("gI", builtin.lsp_implementations, "[G]oto [I]mplementation")
+          keymap("<leader>D", builtin.lsp_type_definitions, "Type [D]efinition")
+          keymap("<leader>ds", builtin.lsp_document_symbols, "[D]ocument [S]ymbols")
+          keymap("<leader>ws", builtin.lsp_workspace_symbols, "[W]orkspace [S]ymbols")
 
+
+          -- Highlight references of the word under the cursor
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
             local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
@@ -127,7 +138,6 @@ return {
       mlsp.setup {
         ensure_installed = {
           "lua_ls",
-          "rust_analyzer",
         },
         handlers = {
           -- default handler
@@ -154,7 +164,7 @@ return {
         }
       }
 
-      -- manually installed servers (from nixpkgs)
+      -- manually installed servers
       lspconfig.nixd.setup {
         cmd = { "/home/gabriel/.nix-profile/bin/nixd" },
         filetypes = { "nix" },
