@@ -43,6 +43,10 @@ return {
       vim.keymap.set("n", "<leader>sn", function ()
         builtin.find_files { cwd = vim.fn.stdpath "config", prompt_title = "Neovim Config" }
       end, { desc = "[S]earch [N]eovim [C]onfig" })
+
+      vim.keymap.set("n", "<leader>s.", function ()
+        builtin.find_files { cwd = "/home/gabriel/.dotfiles/", prompt_title = "Dotfiles" }
+      end, { desc = "[S]earch [.]Dotfiles" })
     end
   }
 }
