@@ -179,21 +179,21 @@ return {
 
       -- NOTE: https://github.com/MaskRay/ccls
       --
-      lspconfig.ccls.setup {
-        cmd = { nixpath .. "ccls" },
-        filetypes = { "c", "h" },
-        capabilities = capabilities,
-        settings = {},
-      }
-
-      -- NOTE: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#clangd
-      --
-      -- lspconfig.clangd.setup {
-      --   cmd = { nixpath .. "clangd" , "--background-index" },
+      -- lspconfig.ccls.setup {
+      --   cmd = { nixpath .. "ccls" },
       --   filetypes = { "c", "h" },
       --   capabilities = capabilities,
       --   settings = {},
       -- }
+
+      -- NOTE: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#clangd
+      --
+      lspconfig.clangd.setup {
+        cmd = { nixpath .. "clangd" , "--background-index" },
+        filetypes = { "c", "h" },
+        capabilities = capabilities,
+        settings = {},
+      }
     end
   }
 }
