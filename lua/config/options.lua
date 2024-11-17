@@ -3,8 +3,8 @@ local opt = vim.opt
 
 -- -----------------------------------------------------------------------------
 -- Set the leader key
-g.mapleader = ","
-g.maplocalleader = ","
+g.mapleader = " "
+g.maplocalleader = " "
 g.have_nerd_font = true
 
 
