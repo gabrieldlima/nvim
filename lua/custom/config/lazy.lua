@@ -21,6 +21,6 @@ require("lazy").setup({
     { import = "custom.plugins" },
   },
   install = { colorscheme = { "default" } },
-  checker = { enabled = true },
+  change_detection = { enabled = false },
   ui = { border = "rounded" }
 })
