@@ -4,8 +4,12 @@ return {
     branch = "0.1.x",
     event = "VimEnter",
     dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
+      {
+        "nvim-lua/plenary.nvim"
+      },
+      {
+        "nvim-tree/nvim-web-devicons"
+      },
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
@@ -13,22 +17,13 @@ return {
           return vim.fn.executable "make" == 1
         end
       },
-      { "nvim-telescope/telescope-ui-select.nvim" },
     },
 
-    opts = {
-      extensions = {
-        ["ui-select"] = {
-          require("telescope.themes").get_dropdown(),
-        },
-      },
-    },
+    opts = {},
 
     config = function (_, opts)
       require("telescope").setup(opts)
-
       pcall(require("telescope").load_extension, "fzf")
-      pcall(require("telescope").load_extension, "ui-select")
 
       local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<leader>sb", builtin.buffers,     { desc = "[S]earch [B]uffers"})
@@ -40,12 +35,12 @@ return {
       vim.keymap.set("n", "<leader>ss", builtin.builtin,     { desc = "[S]earch [S]elect Telescope" })
       vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
 
-      vim.keymap.set("n", "<leader>sn", function ()
+      vim.keymap.set("n", "<leader>en", function ()
         builtin.find_files { cwd = vim.fn.stdpath "config", prompt_title = "Neovim Config" }
       end, { desc = "[S]earch [N]eovim [C]onfig" })
 
-      vim.keymap.set("n", "<leader>s.", function ()
-        builtin.find_files { cwd = "/home/gabriel/.dotfiles/", prompt_title = "Dotfiles" }
+      vim.keymap.set("n", "<leader>e.", function ()
+        builtin.find_files { cwd = os.getenv("HOME") .. "/.dotfiles", prompt_title = "Dotfiles" }
       end, { desc = "[S]earch [.]Dotfiles" })
     end
   }
