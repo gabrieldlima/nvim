@@ -7,6 +7,6 @@
 -- ║╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝║
 -- ╚══════════════════════════════════════════════════╝
 
-require("config.options")
-require("config.keymaps")
-require("config.lazy")
+require("custom.config.options")
+require("custom.config.keymaps")
+require("custom.config.lazy")
