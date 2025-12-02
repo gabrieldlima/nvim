@@ -1,5 +1,6 @@
 -- Options
 vim.o.background = "dark"
+vim.o.clipboard = "unnamedplus"
 vim.o.expandtab = true
 vim.o.list = true
 vim.o.listchars = "space:·"
