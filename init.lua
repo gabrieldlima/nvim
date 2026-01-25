@@ -68,7 +68,6 @@ custom_gruvbox.inactive.c.bg = "#000000"
 require("lualine").setup({
   options = {
     theme = custom_gruvbox,
-    -- theme = gruvbox_dark_hard,
     component_separators = "",
   },
   sections = {
