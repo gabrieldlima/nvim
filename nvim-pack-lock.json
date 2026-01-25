@@ -4,6 +4,10 @@
       "rev": "5e0a460d8e0f7f669c158dedd5f9ae2bcac31437",
       "src": "https://github.com/ellisonleao/gruvbox.nvim"
     },
+    "lualine.nvim": {
+      "rev": "47f91c416daef12db467145e16bed5bbfe00add8",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
     "mini.pairs": {
       "rev": "472ec50092a3314ec285d2db2baa48602d71fe93",
       "src": "https://github.com/nvim-mini/mini.pairs"

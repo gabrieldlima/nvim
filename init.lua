@@ -4,6 +4,7 @@
 vim.o.background = "dark"
 vim.o.clipboard = "unnamedplus"
 vim.o.expandtab = true
+vim.o.laststatus = 3
 vim.o.list = true
 vim.o.listchars = "space:·"
 vim.o.number = true
@@ -32,6 +33,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim" },
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+    { src = "https://github.com/nvim-lualine/lualine.nvim" },
 })
 
 
@@ -45,11 +47,56 @@ require("gruvbox").setup({
     contrast = "dark",
     overrides = {
       SignColumn = { bg = "#000000" },
+      StatusLine = { bg = "#000000" },
       DiagnosticSignWarn = { bg = "#000000", fg = "#fabd2f" },
       DiagnosticSignError = { bg = "#000000", fg = "#fb4934" },
     },
 })
 vim.cmd([[colorscheme gruvbox]])
+
+
+-- Status line
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+local custom_gruvbox = require("lualine.themes.gruvbox_dark")
+custom_gruvbox.normal.c.bg  = "#000000"
+custom_gruvbox.insert.c.bg = "#000000"
+custom_gruvbox.visual.c.bg = "#000000"
+custom_gruvbox.replace.c.bg = "#000000"
+custom_gruvbox.command.c.bg = "#000000"
+custom_gruvbox.inactive.c.bg = "#000000"
+
+require("lualine").setup({
+  options = {
+    theme = custom_gruvbox,
+    -- theme = gruvbox_dark_hard,
+    component_separators = "",
+  },
+  sections = {
+    lualine_a = {
+      { "mode", icon = "", separator = { left = "", right = "" } },
+    },
+    lualine_b = {
+      { "branch",      color = { bg = "#000000", fg = "#ebdbb2" } },
+      { "diff",        color = { bg = "#000000", fg = "#ebdbb2" } },
+      { "diagnostics", color = { bg = "#000000", fg = "#ebdbb2" } },
+    },
+    lualine_c = {
+      { "filename",    color = { bg = "#000000", fg = "#ebdbb2" } },
+    },
+    lualine_x = {
+      { "encoding",    color = { bg = "#000000", fg = "#ebdbb2" } },
+      { "fileformat",  color = { bg = "#000000", fg = "#ebdbb2" } },
+      { "filesize",    color = { bg = "#000000", fg = "#ebdbb2" } },
+      { "filetype",    color = { bg = "#000000", fg = "#ebdbb2" } },
+    },
+    lualine_y = {
+      { "progress",    color = { bg = "#000000", fg = "#ebdbb2" } },
+    },
+    lualine_z = {
+      { "location", separator = { left = "", right = "" } },
+    },
+  },
+})
 
 
 -- Autopairs
