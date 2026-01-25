@@ -9,6 +9,7 @@ vim.o.listchars = "space:·"
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.shiftwidth = 4
+vim.o.signcolumn = "yes"
 vim.o.tabstop = 4
 vim.o.wrap = false
 
@@ -41,7 +42,12 @@ vim.pack.add({
 -- Colorscheme
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 require("gruvbox").setup({
-    contrast = "dark"
+    contrast = "dark",
+    overrides = {
+      SignColumn = { bg = "#000000" },
+      DiagnosticSignWarn = { bg = "#000000", fg = "#fabd2f" },
+      DiagnosticSignError = { bg = "#000000", fg = "#fb4934" },
+    },
 })
 vim.cmd([[colorscheme gruvbox]])
 
