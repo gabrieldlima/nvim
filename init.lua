@@ -139,7 +139,13 @@ vim.lsp.config["lua_ls"] = {
   }
 }
 
+vim.lsp.config["clangd"] = {
+  cmd = { "clangd", "--background-index", "--clang-tidy", "--log=verbose" },
+  filetypes = { "c", "cpp", "h", "hpp", "cxx" },
+}
+
 
 -- LSP enabled
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 vim.lsp.enable("lua_ls")
+vim.lsp.enable("clangd")
