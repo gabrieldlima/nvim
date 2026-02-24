@@ -12,6 +12,7 @@ vim.o.relativenumber = true
 vim.o.shiftwidth = 4
 vim.o.signcolumn = "yes"
 vim.o.tabstop = 4
+vim.o.winborder = "single"
 vim.o.wrap = false
 
 
@@ -34,6 +35,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
     { src = "https://github.com/nvim-lualine/lualine.nvim" },
+    { src = "https://github.com/saghen/blink.cmp", version = "v1.9.1" },
 })
 
 
@@ -50,6 +52,8 @@ require("gruvbox").setup({
       StatusLine = { bg = "#000000" },
       DiagnosticSignWarn = { bg = "#000000", fg = "#fabd2f" },
       DiagnosticSignError = { bg = "#000000", fg = "#fb4934" },
+      Pmenu = { bg = "#000000" },
+      NormalFloat = { bg = "#000000" },
     },
 })
 vim.cmd([[colorscheme gruvbox]])
@@ -149,3 +153,25 @@ vim.lsp.config["clangd"] = {
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("clangd")
+
+
+-- Autocomplete
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+require("blink.cmp").setup({
+  fuzzy = {
+    implementation = "rust",
+    prebuilt_binaries = {
+      download = true,
+      force_version = "v1.9.1"
+    },
+  },
+  completion = {
+    menu = {
+      auto_show = true,
+    },
+    documentation = {
+      auto_show = true,
+      auto_show_delay_ms = 500,
+    },
+  }
+})
