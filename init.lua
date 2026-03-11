@@ -12,6 +12,7 @@ vim.o.relativenumber = true
 vim.o.shiftwidth = 4
 vim.o.signcolumn = "yes"
 vim.o.tabstop = 4
+vim.o.updatetime = 50
 vim.o.winborder = "single"
 vim.o.wrap = false
 
