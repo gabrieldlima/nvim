@@ -23,6 +23,9 @@ vim.o.wrap = false
 vim.g.mapleader = " "
 vim.keymap.set("i", "jk", "<Esc>")
 
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
+
 
 -- =============================================================================
 -- Plugins installation
@@ -117,6 +120,7 @@ vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Telescope find f
 vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Telescope live grep" })
 vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "Telescope buffers" })
 vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "Telescope help tags" })
+vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "Telescope diagnostics" })
 
 
 -- Treesitter
