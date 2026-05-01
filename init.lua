@@ -16,7 +16,6 @@ vim.o.updatetime = 50
 vim.o.winborder = "single"
 vim.o.wrap = false
 
-
 -- =============================================================================
 -- Keymaps
 -- =============================================================================
@@ -172,7 +171,7 @@ require("blink.cmp").setup({
   },
   completion = {
     menu = {
-      auto_show = true,
+      auto_show = false,
     },
     documentation = {
       auto_show = true,
