@@ -152,11 +152,17 @@ vim.lsp.config["clangd"] = {
   filetypes = { "c", "cpp", "h", "hpp", "cxx" },
 }
 
+vim.lsp.config["nixd"] = {
+  cmd = { "nixd" },
+  filetypes = { "nix" },
+}
+
 
 -- LSP enabled
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("clangd")
+vim.lsp.enable("nixd")
 
 
 -- Autocomplete
