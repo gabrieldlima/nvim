@@ -51,12 +51,12 @@ vim.pack.add({
 require("gruvbox").setup({
     contrast = "dark",
     overrides = {
-      SignColumn = { bg = "#000000" },
-      StatusLine = { bg = "#000000" },
-      DiagnosticSignWarn = { bg = "#000000", fg = "#fabd2f" },
-      DiagnosticSignError = { bg = "#000000", fg = "#fb4934" },
-      Pmenu = { bg = "#000000" },
-      NormalFloat = { bg = "#000000" },
+      SignColumn = { bg = "#0f0f0f" },
+      StatusLine = { bg = "#0f0f0f" },
+      DiagnosticSignWarn = { bg = "#0f0f0f", fg = "#fabd2f" },
+      DiagnosticSignError = { bg = "#0f0f0f", fg = "#fb4934" },
+      Pmenu = { bg = "#0f0f0f" },
+      NormalFloat = { bg = "#0f0f0f" },
     },
 })
 vim.cmd([[colorscheme gruvbox]])
@@ -65,12 +65,12 @@ vim.cmd([[colorscheme gruvbox]])
 -- Status line
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 local custom_gruvbox = require("lualine.themes.gruvbox_dark")
-custom_gruvbox.normal.c.bg  = "#000000"
-custom_gruvbox.insert.c.bg = "#000000"
-custom_gruvbox.visual.c.bg = "#000000"
-custom_gruvbox.replace.c.bg = "#000000"
-custom_gruvbox.command.c.bg = "#000000"
-custom_gruvbox.inactive.c.bg = "#000000"
+custom_gruvbox.normal.c.bg  = "#0f0f0f"
+custom_gruvbox.insert.c.bg = "#0f0f0f"
+custom_gruvbox.visual.c.bg = "#0f0f0f"
+custom_gruvbox.replace.c.bg = "#0f0f0f"
+custom_gruvbox.command.c.bg = "#0f0f0f"
+custom_gruvbox.inactive.c.bg = "#0f0f0f"
 
 require("lualine").setup({
   options = {
@@ -82,21 +82,21 @@ require("lualine").setup({
       { "mode", icon = "", separator = { left = "", right = "" } },
     },
     lualine_b = {
-      { "branch",      color = { bg = "#000000", fg = "#ebdbb2" } },
-      { "diff",        color = { bg = "#000000", fg = "#ebdbb2" } },
-      { "diagnostics", color = { bg = "#000000", fg = "#ebdbb2" } },
+      { "branch",      color = { bg = "#0f0f0f", fg = "#ebdbb2" } },
+      { "diff",        color = { bg = "#0f0f0f", fg = "#ebdbb2" } },
+      { "diagnostics", color = { bg = "#0f0f0f", fg = "#ebdbb2" } },
     },
     lualine_c = {
-      { "filename",    color = { bg = "#000000", fg = "#ebdbb2" } },
+      { "filename",    color = { bg = "#0f0f0f", fg = "#ebdbb2" } },
     },
     lualine_x = {
-      { "encoding",    color = { bg = "#000000", fg = "#ebdbb2" } },
-      { "fileformat",  color = { bg = "#000000", fg = "#ebdbb2" } },
-      { "filesize",    color = { bg = "#000000", fg = "#ebdbb2" } },
-      { "filetype",    color = { bg = "#000000", fg = "#ebdbb2" } },
+      { "encoding",    color = { bg = "#0f0f0f", fg = "#ebdbb2" } },
+      { "fileformat",  color = { bg = "#0f0f0f", fg = "#ebdbb2" } },
+      { "filesize",    color = { bg = "#0f0f0f", fg = "#ebdbb2" } },
+      { "filetype",    color = { bg = "#0f0f0f", fg = "#ebdbb2" } },
     },
     lualine_y = {
-      { "progress",    color = { bg = "#000000", fg = "#ebdbb2" } },
+      { "progress",    color = { bg = "#0f0f0f", fg = "#ebdbb2" } },
     },
     lualine_z = {
       { "location", separator = { left = "", right = "" } },
