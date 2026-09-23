@@ -38,7 +38,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
     { src = "https://github.com/nvim-lualine/lualine.nvim" },
-    { src = "https://github.com/saghen/blink.cmp", version = "v1.9.1" },
+    { src = "https://github.com/saghen/blink.cmp", version = "v1.10.2" },
 })
 
 
