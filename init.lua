@@ -112,6 +112,12 @@ require("mini.pairs").setup()
 
 -- Telescope
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+require("telescope").setup({
+  defaults = {
+    layout_strategy = "vertical",
+  },
+})
+
 local builtin = require("telescope.builtin")
 require("telescope").load_extension("fzf")
 
